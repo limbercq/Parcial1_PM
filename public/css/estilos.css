@@ -1,0 +1,39 @@
+/*---------------------------*/
+/*		Perfil				*/
+/*----------------------------*/
+.jumbotron{
+	background-image: url(../img/background.jpg);
+	border-radius: 0%;
+	height: 300px;
+	
+}
+.Perfilcont{
+	margin-top: -200px;	
+	
+}
+
+.contPerfil{
+	background: #6567dac5   ;
+	color: #eee;
+	padding: 40px 5px 10px 40px;
+	
+}
+h1{
+	text-align: center;
+	font-size: 50px;
+}
+.contPerfil h3, h5, .clas, h1{
+	font-family: 'Lobster', cursive;
+}
+.imgPerfil{	
+	height: 100%;
+	width: 100%;
+	
+}
+.perfilImg{
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+
