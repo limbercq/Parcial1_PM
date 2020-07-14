@@ -21,6 +21,9 @@
                       <p class="card-text mb-0 text-danger">Residencia</p>
                       <p class="card-text ml-1" v-text="persona.residencia"></p>
                   </div>
+                <label>Elegir un color</label>
+                <input type="color" v-model="color" name="color"> 
+                <button type="submit" @click="cambiarColor(persona.ci)" class="btn btn-outline-secundari btn-sm">cambiar color</button>                   
               </div>    
           </div>
           <div class="col-4 col-sm-6 col-lg-4 perfilImg ">
@@ -35,23 +38,35 @@
     export default {
         data(){
             return{
-                persona :[]
+                persona :[],
+                color : ""
             } 
         },
         methods :{
             listarPersona (){
                 let me=this;
-                me.update = true;
                 var url= '/usuraio';
                 axios.get(url).then(function (response) {
-                    // var respuesta= response.data;                    
-                    me.persona = response.data;                    
-                    
+                    me.persona = response.data;      
+                    me.color = me.persona.color;                                  
                 })
                 .catch(function (error) {
                     // console.log(error);
                 });
             },
+            cambiarColor(id){
+                let me=this;
+                axios.put('/usuraiocolor',{
+                    'ci':id,
+                    'color':this.color
+                }).then(function (response) { 
+                    location.reload()                                     
+                })
+                .catch(function (error) {
+                    // console.log(error);
+                });
+                
+            }
         },
         mounted() {
            this.listarPersona();

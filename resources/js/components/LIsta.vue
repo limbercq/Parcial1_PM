@@ -5,7 +5,8 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-sm table-hover">                    
                     <thead>
-                        <tr class="text-center">                            
+                        <tr class="text-center"> 
+                            <th>#</th>                           
                             <th>Nombre y apellidos</th>
                             <th>Carnet</th>
                             <th>F. Nacimiento</th>
@@ -14,12 +15,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="persona in arrayPersona" :key="persona.ci"> 
+                        <tr v-for="(persona ,index) in arrayPersona" :key="persona.ci" class="text-center"> 
+                        <td v-text="index+1"></td>
                         <td v-text="persona.nombre"></td>
                         <td v-text="persona.ci"></td>
                         <td v-text="persona.f_naci"></td>
                         <td v-text="persona.residencia"></td>
-                        <td v-text="persona.password"></td>
+                        <td v-text="persona.ci"></td>
                         </tr>                                
                     </tbody>
                 </table>

@@ -9,6 +9,7 @@ class IdentificadorController extends Controller
 {
       public function index(Request $request)
       {
+            if(!$request->ajax()) return redirect('/');
             $personas = Identificador::join('users','users.usuario','=','identificadors.ci')
             ->select('nombre','ci','f_naci','residencia')
             ->orderBy('id', 'asc')
@@ -18,7 +19,10 @@ class IdentificadorController extends Controller
 
       public function usuario(Request $request)
       {
-            $usuario = Identificador::where('ci',\Auth::user()->usuario)
+            // if(!$request->ajax()) return redirect('/');
+            $usuario = Identificador::join('users','users.usuario','=','identificadors.ci')
+            ->select('nombre','identificadors.ci','f_naci','residencia','color')
+            ->where('identificadors.ci',\Auth::user()->usuario)
             ->get();
 
             return $usuario[0];

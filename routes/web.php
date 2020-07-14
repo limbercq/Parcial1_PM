@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/personas','IdentificadorController@index');
     Route::get('/usuraio','IdentificadorController@usuario');
+    Route::put('/usuraiocolor','Usuario@update');
+    Route::post('/registrar','Usuario@guardar');
     
 });
 

@@ -1,6 +1,10 @@
 /*---------------------------*/
 /*		Perfil				*/
 /*----------------------------*/
+.img{
+	width: 30px;
+	border-radius: 50%;
+}
 .jumbotron{
 	background-image: url(../img/background.jpg);
 	border-radius: 0%;

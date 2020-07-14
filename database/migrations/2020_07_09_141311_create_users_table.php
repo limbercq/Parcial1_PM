@@ -17,9 +17,10 @@ class CreateUsersTable extends Migration
             $table->Integer('usuario')->unique();
             $table->foreign('usuario')->references('ci')->on('identificadors')->onDelete('cascade');
 
-            $table->string('clave');
+            $table->string('password');
+            $table->string('color',10);
         });
-        DB::table('users')->insert(array('usuario'=>'8308638','clave'=>'$2y$10$rq1AGZcPv9zO7XRp/P2ZoOC5Muu37YdKaEGdM2yDM/0/NijruiWSm'));
+        DB::table('users')->insert(array('usuario'=>'8308638','password'=>'$2y$10$rq1AGZcPv9zO7XRp/P2ZoOC5Muu37YdKaEGdM2yDM/0/NijruiWSm','color'=>'#f8f9fa'));
     }
 
     /**

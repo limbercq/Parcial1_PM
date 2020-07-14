@@ -6,8 +6,8 @@
         <lista></lista>
     </template>
 
-    <template v-if="menu == 2">
-        <h1>Registro </h1>
+    <template v-if="menu == 2">        
+        <Registro></Registro>
     </template>
 
     <template v-if="menu == 3">
