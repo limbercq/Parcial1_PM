@@ -32,6 +32,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/usuraio','IdentificadorController@usuario');
     Route::put('/usuraiocolor','Usuario@update');
     Route::post('/registrar','Usuario@guardar');
-    
+    Route::get('/notas','NotasController@index');
 });
 

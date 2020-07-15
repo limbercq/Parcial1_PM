@@ -19,7 +19,7 @@ class IdentificadorController extends Controller
 
       public function usuario(Request $request)
       {
-            // if(!$request->ajax()) return redirect('/');
+            if(!$request->ajax()) return redirect('/');
             $usuario = Identificador::join('users','users.usuario','=','identificadors.ci')
             ->select('nombre','identificadors.ci','f_naci','residencia','color')
             ->where('identificadors.ci',\Auth::user()->usuario)

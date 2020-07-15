@@ -11,5 +11,5 @@
     </template>
 
     <template v-if="menu == 3">
-        <h1>Notas </h1>
+        <Nota></Nota>
     </template>

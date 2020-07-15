@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('perfil', require('./components/perfil.vue').default);
 Vue.component('lista', require('./components/Lista.vue').default);
 Vue.component('Registro', require('./components/Registro.vue').default);
+Vue.component('Nota', require('./components/nota.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
